@@ -269,7 +269,7 @@ const SignInScreen = ({navigation}) => {
           </TouchableOpacity>
 
           <TouchableOpacity
-            onPress={() => navigation.navigate('SignupScreen')}
+            onPress={navigation.goBack}
             style={[
               styles.signIn,
               {

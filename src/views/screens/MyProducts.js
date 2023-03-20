@@ -36,6 +36,7 @@ const MyProducts = ({navigation}) => {
   }, []);
 
   const Card = ({product}) => {
+    if(product!=null) {
     return (
       <TouchableHighlight
         underlayColor={COLORS.white}
@@ -96,7 +97,7 @@ const MyProducts = ({navigation}) => {
           </View>
         </View>
       </TouchableHighlight>
-    );
+    )};
   };
 
   return (
