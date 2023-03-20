@@ -12,7 +12,7 @@ const DetailsScreen = ({navigation, route}) => {
   const [active, setactive] = useState(1);
   const [userInfo, setUserInfo] = useState(null);
   const item = route.params;
-  console.log(item.images);
+
 
   const {width} = Dimensions.get("window");
   const height = width*100/60;

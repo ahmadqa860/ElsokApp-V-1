@@ -23,7 +23,6 @@ const DetailsScreen = ({navigation, route}) => {
 */
   const PostDeleteItem = async ()=>{
    const res = await deleteItem(item.id);
-   console.log(res);
   }
 
 
