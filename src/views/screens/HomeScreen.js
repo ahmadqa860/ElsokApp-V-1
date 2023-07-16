@@ -136,15 +136,9 @@ const HomeScreen = ({navigation}) => {
               justifyContent: 'space-between',
             }}>
             <Text style={{fontSize: 18, fontWeight: 'bold'}}>
-              ${product.product_price}
+            ₪{product.product_price}
             </Text>
-            <TouchableOpacity onPress={communityShare}>
-              <Image
-                style={style.shareIcon}
-                source={require('../../assets/core-icons/share.png')}
-                size={10}
-              />
-            </TouchableOpacity>
+           
           </View>
         </View>
       </TouchableHighlight>

@@ -3,26 +3,22 @@ import {SafeAreaView, StyleSheet, View, Text, Image ,Dimensions, TouchableOpacit
 import COLORS from '../../consts/colors';
 import {deleteItem} from '../../services/userService';
 
-const DetailsScreen = ({navigation, route}) => {
+const DeleteScreen = ({navigation, route}) => {
   
-  const [active, setactive] = useState(1);
+  const [isloading, setIsLoading] = useState(false);
   const item = route.params;
-  
-  /*
-  useEffect(() => {
-    async function fetchUserInfo(){
-      if(item){
-        const response = await fetch(`${apiUrl}/shop/productContact/${item.id}`);
-        const json = await response.json();
-        setUserInfo(json);
-      }
-    }
 
-    fetchUserInfo();
-  }, []);
-*/
   const PostDeleteItem = async ()=>{
-   const res = await deleteItem(item.id);
+  const res = await deleteItem(item.id);
+  if (res.status === 200) {
+    navigation.navigate('MyAccount');
+  } else {
+    setIsLoading(false);
+    Alert.alert('إدخال خاطئ!', 'حدث خطأ في ارسال المعلومات!', [
+      {text: 'أكمل'},
+    ]);
+  }
+  console.log(res);
   }
 
 
@@ -175,4 +171,4 @@ const style = StyleSheet.create({
 
 });
 
-export default DetailsScreen;
+export default DeleteScreen;

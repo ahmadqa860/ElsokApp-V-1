@@ -229,12 +229,10 @@ export async function deleteItem(id) {
     .then(json => json)
     .catch(err => err);
   if (hasToken() && tokenData !== null) {
-    const response = await fetch(`${apiUrl}/seller-products/${id}`, {
-      method: 'DELETE',
+    const response = await fetch(`${apiUrl}/seller-products/delete-product/${id}`, {
+      method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
         Authorization: `Bearer ${tokenData}`,
-        Accept: 'application/json',
       },
     })
       .then(res => res)
